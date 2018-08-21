@@ -7,7 +7,6 @@
  * @copyright   Copyright 2017 Yireo (https://www.yireo.com/)
  * @license     Open Source License (OSL v3)
  */
-declare(strict_types=1);
 
 namespace Yireo\GoogleTagManager2\CustomerData;
 
@@ -92,7 +91,7 @@ class Order implements SectionSourceInterface
     /**
      * @return OrderInterface
      */
-    private function getOrder(): OrderInterface
+    private function getOrder()
     {
         return $this->checkoutSession->getLastRealOrder();
     }
@@ -100,7 +99,7 @@ class Order implements SectionSourceInterface
     /**
      * @return string
      */
-    private function getId(): string
+    private function getId()
     {
         return (string) $this->order->getIncrementId();
     }
@@ -108,7 +107,7 @@ class Order implements SectionSourceInterface
     /**
      * @return string
      */
-    private function getDate(): string
+    private function getDate()
     {
         return (string) $this->order->getCreatedAt();
     }
@@ -116,7 +115,7 @@ class Order implements SectionSourceInterface
     /**
      * @return string
      */
-    private function getWebsiteName(): string
+    private function getWebsiteName()
     {
         return (string) $this->scopeConfig->getValue('general/store_information/name');
     }
@@ -124,7 +123,7 @@ class Order implements SectionSourceInterface
     /**
      * @return string
      */
-    private function getBaseCurrency(): string
+    private function getBaseCurrency()
     {
         return (string) $this->currency->getCurrencySymbol();
     }
@@ -132,7 +131,7 @@ class Order implements SectionSourceInterface
     /**
      * @return float
      */
-    private function getGrandTotalAmount(): float
+    private function getGrandTotalAmount()
     {
         return (float)$this->order->getGrandTotal();
     }
@@ -140,7 +139,7 @@ class Order implements SectionSourceInterface
     /**
      * @return float
      */
-    private function getSubTotalAmount(): float
+    private function getSubTotalAmount()
     {
         return (float)$this->order->getSubTotal();
     }
@@ -148,7 +147,7 @@ class Order implements SectionSourceInterface
     /**
      * @return float
      */
-    private function getShippingAmount(): float
+    private function getShippingAmount()
     {
         return (float)$this->order->getShippingAmount();
     }
@@ -156,7 +155,7 @@ class Order implements SectionSourceInterface
     /**
      * @return string
      */
-    private function getPaymentLabel(): string
+    private function getPaymentLabel()
     {
         $payment = $this->order->getPayment();
 
@@ -170,7 +169,7 @@ class Order implements SectionSourceInterface
     /**
      * @return float
      */
-    private function getTaxAmount(): float
+    private function getTaxAmount()
     {
         return (float)$this->order->getTaxAmount();
     }
@@ -178,7 +177,7 @@ class Order implements SectionSourceInterface
     /**
      * @return string
      */
-    private function getPromoCode(): string
+    private function getPromoCode()
     {
         return (string)$this->order->getCouponCode();
     }
@@ -186,7 +185,7 @@ class Order implements SectionSourceInterface
     /**
      * @return bool
      */
-    private function hasOrder(): bool
+    private function hasOrder()
     {
         try {
             $this->getOrder();
@@ -202,7 +201,7 @@ class Order implements SectionSourceInterface
      *
      * @return array
      */
-    private function getItemsAsArray(): array
+    private function getItemsAsArray()
     {
         $order = $this->order;
         $data = [];

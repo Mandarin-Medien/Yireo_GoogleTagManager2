@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace Yireo\GoogleTagManager2\Test\Unit\Helper;
 
@@ -35,7 +34,7 @@ class DataTest extends TestCase
     /**
      * @return Data
      */
-    private function getTarget(array $configData = []): Data
+    private function getTarget(array $configData = [])
     {
         $helperContext = $this->getHelperContextMock();
         $config = $this->getConfigMock($configData);
@@ -46,7 +45,7 @@ class DataTest extends TestCase
     /**
      * @return HelperContext
      */
-    private function getHelperContextMock(): HelperContext
+    private function getHelperContextMock()
     {
         $helper = new ObjectManagerHelper($this);
         return $helper->getObject(HelperContext::class);
@@ -57,7 +56,7 @@ class DataTest extends TestCase
      *
      * @return Config
      */
-    private function getConfigMock(array $configData = []): Config
+    private function getConfigMock(array $configData = [])
     {
         $config = Mockery::mock(Config::class);
 

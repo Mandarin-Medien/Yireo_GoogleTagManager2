@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace Yireo\GoogleTagManager2;
 
@@ -54,7 +53,7 @@ class Config
      *
      * @return bool
      */
-    public function isEnabled(): bool
+    public function isEnabled()
     {
         $enabled = (bool)$this->getConfigValue('enabled', false);
         if (!$enabled) {
@@ -73,7 +72,7 @@ class Config
      *
      * @return bool
      */
-    public function isDebug(): bool
+    public function isDebug()
     {
         return (bool)$this->getConfigValue('debug');
     }
@@ -83,7 +82,7 @@ class Config
      *
      * @return string
      */
-    public function getId(): string
+    public function getId()
     {
         return (string) $this->getConfigValue('id');
     }
@@ -93,7 +92,7 @@ class Config
      *
      * @return bool
      */
-    public function isMethodObserver(): bool
+    public function isMethodObserver()
     {
         return ($this->getConfigValue('method') == self::METHOD_OBSERVER);
     }
@@ -103,7 +102,7 @@ class Config
      *
      * @return bool
      */
-    public function isMethodLayout(): bool
+    public function isMethodLayout()
     {
         return ($this->getConfigValue('method') == self::METHOD_LAYOUT);
     }

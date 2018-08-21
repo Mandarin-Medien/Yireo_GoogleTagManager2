@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace Yireo\GoogleTagManager2\Test\Integration\CustomerData;
 
@@ -71,7 +70,7 @@ class OrderTest extends TestCase
     /**
      * @return CheckoutSession
      */
-    private function getCheckoutSessionMock(): CheckoutSession
+    private function getCheckoutSessionMock()
     {
         $mock = Mockery::mock(CheckoutSession::class);
         return $mock;
@@ -80,7 +79,7 @@ class OrderTest extends TestCase
     /**
      * @return ScopeConfigInterface
      */
-    private function getScopeConfigMock(): ScopeConfigInterface
+    private function getScopeConfigMock()
     {
         $mock = Mockery::mock(ScopeConfigInterface::class);
         return $mock;
@@ -89,7 +88,7 @@ class OrderTest extends TestCase
     /**
      * @return Currency
      */
-    private function getCurrencyMock(): Currency
+    private function getCurrencyMock()
     {
         $mock = Mockery::mock(Currency::class);
         return $mock;
@@ -98,7 +97,7 @@ class OrderTest extends TestCase
     /**
      * @return array
      */
-    private function getSectionDataStub(): array
+    private function getSectionDataStub()
     {
         return $this->sectionDataStub;
     }

@@ -7,7 +7,6 @@
  * @copyright   Copyright 2018 Yireo (https://www.yireo.com/)
  * @license     Open Source License
  */
-declare(strict_types=1);
 
 namespace Yireo\GoogleTagManager2\Test\Unit;
 
@@ -104,7 +103,7 @@ class ConfigTest extends TestCase
     /**
      * @return Config
      */
-    private function getTarget(): Config
+    private function getTarget()
     {
         $scopeConfig = $this->getScopeConfigMock();
         $cookieHelper = $this->getCookieHelperMock();
@@ -115,7 +114,7 @@ class ConfigTest extends TestCase
     /**
      * @return ScopeConfigInterface
      */
-    private function getScopeConfigMock(): ScopeConfigInterface
+    private function getScopeConfigMock()
     {
         $this->scopeConfig = Mockery::mock(ScopeConfigInterface::class);
 
@@ -129,7 +128,7 @@ class ConfigTest extends TestCase
     /**
      * @return CookieHelper
      */
-    private function getCookieHelperMock(): CookieHelper
+    private function getCookieHelperMock()
     {
         $cookieHelper = Mockery::mock(CookieHelper::class);
         $cookieHelper->allows()->isCookieRestrictionModeEnabled()->andReturns(true);
